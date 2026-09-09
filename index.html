@@ -1,0 +1,539 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jose Pablo Monestel Cruz — Software Developer &amp; Data Analyst</title>
+<meta name="description" content="Portfolio of Jose Pablo Monestel Cruz — Software Developer &amp; Data Analyst based in Guanacaste, Costa Rica. Audited, QA-verified projects in .NET, Python, Java and SQL Server.">
+<link rel="icon" href="data:,">
+<style>
+  :root{
+    --paper:#efeee7;
+    --surface:#fbfaf6;
+    --surface-2:#f4f2ea;
+    --ink:#1d2420;
+    --ink-dim:#5b655d;
+    --ink-faint:#8a9089;
+    --line:#dad8cb;
+    --accent:#1f6b58;
+    --accent-soft:#e4eee9;
+    --prep:#a6631e;
+    --prep-soft:#f4e9da;
+    --focus:#1f6b58;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --paper:#121815;
+      --surface:#161e1a;
+      --surface-2:#1b2420;
+      --ink:#e9e7dd;
+      --ink-dim:#9ba39b;
+      --ink-faint:#657069;
+      --line:#28322b;
+      --accent:#74c3ac;
+      --accent-soft:#1c2b25;
+      --prep:#d89a57;
+      --prep-soft:#2b2318;
+      --focus:#74c3ac;
+    }
+  }
+  :root[data-theme="dark"]{
+    --paper:#121815;
+    --surface:#161e1a;
+    --surface-2:#1b2420;
+    --ink:#e9e7dd;
+    --ink-dim:#9ba39b;
+    --ink-faint:#657069;
+    --line:#28322b;
+    --accent:#74c3ac;
+    --accent-soft:#1c2b25;
+    --prep:#d89a57;
+    --prep-soft:#2b2318;
+    --focus:#74c3ac;
+  }
+
+  *{box-sizing:border-box;}
+  html{-webkit-text-size-adjust:100%;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Source Serif 4', Georgia, 'Times New Roman', serif;
+    font-size:16px;
+    line-height:1.6;
+  }
+  ::selection{ background:var(--accent-soft); color:var(--ink); }
+  a{ color:var(--accent); text-decoration-color:color-mix(in srgb, var(--accent) 45%, transparent); text-underline-offset:3px; }
+  a:hover{ text-decoration-thickness:2px; }
+  a:focus-visible, button:focus-visible{ outline:2px solid var(--focus); outline-offset:3px; border-radius:2px; }
+
+  .mono{
+    font-family:'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  }
+
+  .wrap{
+    max-width:760px;
+    margin:0 auto;
+    padding:2.75rem 1.5rem 5rem;
+  }
+
+  .path-row{
+    display:flex;
+    justify-content:space-between;
+    align-items:baseline;
+    gap:1rem;
+    font-size:.72rem;
+    letter-spacing:.02em;
+    color:var(--ink-faint);
+    margin-bottom:2.75rem;
+    flex-wrap:wrap;
+  }
+
+  header.hero{ margin-bottom:2.6rem; }
+  h1.name{
+    font-family:'JetBrains Mono', monospace;
+    font-weight:700;
+    font-size:clamp(1.7rem, 4.4vw, 2.5rem);
+    line-height:1.15;
+    letter-spacing:-.01em;
+    margin:0 0 .35rem;
+    text-wrap:balance;
+  }
+  p.role{
+    font-style:italic;
+    color:var(--ink-dim);
+    font-size:1.05rem;
+    margin:0 0 1.25rem;
+  }
+  p.bio{
+    max-width:62ch;
+    margin:0;
+    color:var(--ink);
+  }
+  p.bio + p.bio{ margin-top:.9rem; }
+
+  .contact-card{
+    margin-top:1.5rem;
+    background:var(--surface);
+    border:1px solid var(--line);
+    border-radius:4px;
+    padding:.9rem 1.1rem;
+    display:grid;
+    grid-template-columns:auto 1fr;
+    gap:.4rem 1rem;
+    font-family:'JetBrains Mono', monospace;
+    font-size:.85rem;
+  }
+  .contact-card dt{
+    color:var(--ink-faint);
+    grid-column:1;
+  }
+  .contact-card dd{
+    margin:0;
+    grid-column:2;
+    color:var(--ink);
+    overflow-wrap:anywhere;
+  }
+  .contact-card dd a{ color:var(--ink); text-decoration-color:var(--line); }
+  .contact-card dd a:hover{ color:var(--accent); text-decoration-color:var(--accent); }
+
+  section{ margin-top:3rem; }
+  h2.label{
+    font-family:'JetBrains Mono', monospace;
+    font-size:.75rem;
+    font-weight:600;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    color:var(--ink-faint);
+    margin:0 0 .3rem;
+  }
+  p.section-note{
+    color:var(--ink-dim);
+    font-size:.95rem;
+    max-width:58ch;
+    margin:0 0 1.3rem;
+  }
+
+  .about-meta{
+    display:flex;
+    flex-direction:column;
+    gap:.35rem;
+    font-family:'JetBrains Mono', monospace;
+    font-size:.82rem;
+    color:var(--ink-dim);
+    margin-top:1.1rem;
+    border-left:2px solid var(--line);
+    padding-left:.9rem;
+  }
+  .about-meta strong{ color:var(--ink); font-weight:600; }
+
+  .tag-group{ margin-top:1.4rem; }
+  .tag-group h3{
+    font-family:'JetBrains Mono', monospace;
+    font-size:.72rem;
+    letter-spacing:.06em;
+    text-transform:uppercase;
+    color:var(--ink-faint);
+    font-weight:600;
+    margin:0 0 .55rem;
+  }
+  .tags{ display:flex; flex-wrap:wrap; gap:.45rem; }
+  .tag{
+    font-family:'JetBrains Mono', monospace;
+    font-size:.78rem;
+    padding:.22rem .55rem;
+    border:1px solid var(--line);
+    border-radius:3px;
+    background:var(--surface);
+    color:var(--ink-dim);
+    white-space:nowrap;
+  }
+
+  .cert-line{
+    margin-top:1.6rem;
+    font-family:'JetBrains Mono', monospace;
+    font-size:.78rem;
+    color:var(--ink-faint);
+    display:flex;
+    flex-wrap:wrap;
+    gap:.4rem .7rem;
+  }
+  .cert-line span{ white-space:nowrap; }
+  .cert-line b{ color:var(--ink-dim); font-weight:600; }
+
+  .projects-list{
+    display:flex;
+    flex-direction:column;
+  }
+  article.project{
+    padding:1.7rem 0;
+    border-top:1px solid var(--line);
+  }
+  article.project:last-child{ border-bottom:1px solid var(--line); }
+
+  .project-head{
+    display:flex;
+    justify-content:space-between;
+    align-items:baseline;
+    gap:1rem;
+    flex-wrap:wrap;
+    margin-bottom:.5rem;
+  }
+  h3.project-name{
+    font-family:'JetBrains Mono', monospace;
+    font-size:1.12rem;
+    font-weight:700;
+    margin:0;
+    color:var(--ink);
+  }
+  h3.project-name a{ color:inherit; text-decoration:none; }
+  h3.project-name a:hover{ color:var(--accent); }
+
+  .status{
+    font-family:'JetBrains Mono', monospace;
+    font-size:.68rem;
+    letter-spacing:.06em;
+    text-transform:uppercase;
+    font-weight:600;
+    display:inline-flex;
+    align-items:center;
+    gap:.4rem;
+    padding:.18rem .5rem;
+    border-radius:3px;
+    white-space:nowrap;
+  }
+  .status::before{
+    content:"";
+    width:.4rem;
+    height:.4rem;
+    border-radius:50%;
+    background:currentColor;
+    flex:none;
+  }
+  .status.ok{ color:var(--accent); background:var(--accent-soft); }
+  .status.prep{ color:var(--prep); background:var(--prep-soft); }
+
+  p.project-desc{
+    margin:.6rem 0 .9rem;
+    color:var(--ink);
+    max-width:64ch;
+  }
+
+  ul.stats{
+    list-style:none;
+    margin:0 0 1rem;
+    padding:0;
+    display:flex;
+    flex-direction:column;
+    gap:.3rem;
+  }
+  ul.stats li{
+    font-family:'JetBrains Mono', monospace;
+    font-size:.82rem;
+    color:var(--ink-dim);
+    padding-left:1.15rem;
+    position:relative;
+    line-height:1.5;
+  }
+  ul.stats li::before{
+    content:"›";
+    position:absolute;
+    left:0;
+    color:var(--accent);
+    font-weight:700;
+  }
+
+  .project-foot{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:.6rem;
+    margin-top:.9rem;
+  }
+  .repo-path{
+    font-family:'JetBrains Mono', monospace;
+    font-size:.78rem;
+    color:var(--ink-faint);
+  }
+  a.view-link{
+    font-family:'JetBrains Mono', monospace;
+    font-size:.82rem;
+    font-weight:600;
+  }
+  span.soon-note{
+    font-family:'JetBrains Mono', monospace;
+    font-size:.78rem;
+    color:var(--ink-faint);
+    font-style:normal;
+  }
+
+  footer{
+    margin-top:3.5rem;
+    padding-top:1.6rem;
+    border-top:1px solid var(--line);
+  }
+  footer .contact-card{ margin-top:0; }
+  p.footer-note{
+    margin:1.1rem 0 0;
+    font-family:'JetBrains Mono', monospace;
+    font-size:.75rem;
+    color:var(--ink-faint);
+  }
+  p.langs{
+    margin:.4rem 0 0;
+    font-family:'JetBrains Mono', monospace;
+    font-size:.78rem;
+    color:var(--ink-dim);
+  }
+
+  @media (max-width:480px){
+    .contact-card{ grid-template-columns:1fr; }
+    .contact-card dt{ margin-top:.4rem; }
+    .contact-card dt:first-child{ margin-top:0; }
+  }
+
+  @media (prefers-reduced-motion:no-preference){
+    article.project, header.hero, section{ animation:none; }
+  }
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&display=swap">
+</head>
+<body>
+<div class="wrap">
+
+  <div class="path-row mono">
+    <span>~/jose-pablo-monestel-cruz/portfolio</span>
+    <span>v1.0 · updated 2026-09-09</span>
+  </div>
+
+  <header class="hero">
+    <h1 class="name">Jose Pablo Monestel Cruz</h1>
+    <p class="role">Software Developer · Data Analyst — Guanacaste, Costa Rica</p>
+    <p class="bio">Software developer and data-minded builder currently working in .NET, C# and SQL Server as a Software Developer Intern at Snap&#8209;Compliance, after a database internship at ASEINFO auditing multi-client SQL Server data. Studying a Licenciatura en Tecnolog&iacute;as de la Informaci&oacute;n at Universidad Invenio.</p>
+    <p class="bio">The projects below started as university and personal work. Each one has since been rebuilt, run for real, and QA-tested — every entry lists the actual bugs that turned up and how they were verified, not just a finished feature list.</p>
+
+    <dl class="contact-card">
+      <dt>email</dt>
+      <dd><a href="mailto:monestelcruzjosepablo@gmail.com">monestelcruzjosepablo@gmail.com</a></dd>
+      <dt>linkedin</dt>
+      <dd><a href="https://linkedin.com/in/jose-pablo-monestel-cruz" target="_blank" rel="noopener">linkedin.com/in/jose-pablo-monestel-cruz</a></dd>
+      <dt>github</dt>
+      <dd><a href="https://github.com/JpMonestelC" target="_blank" rel="noopener">github.com/JpMonestelC</a></dd>
+      <dt>phone</dt>
+      <dd><a href="tel:+50684535325">+506 8453-5325</a></dd>
+    </dl>
+  </header>
+
+  <section class="about">
+    <h2 class="label">About</h2>
+    <div class="about-meta">
+      <div><strong>Currently</strong> — Software Developer Intern, Snap-Compliance (.NET, C#, Blazor, SQL Server)</div>
+      <div><strong>Education</strong> — Licenciatura en Tecnolog&iacute;as de la Informaci&oacute;n, Universidad Invenio (in progress) · T&eacute;cnico en An&aacute;lisis de Datos, FUNDATEC / ITCR (2023)</div>
+      <div><strong>Languages</strong> — Spanish (native) · English (B2+, field-tested in bilingual technical support)</div>
+    </div>
+
+    <div class="tag-group">
+      <h3>Languages</h3>
+      <div class="tags">
+        <span class="tag">C#</span><span class="tag">Python</span><span class="tag">Java</span>
+        <span class="tag">JavaScript</span><span class="tag">PHP</span><span class="tag">SQL</span>
+      </div>
+    </div>
+    <div class="tag-group">
+      <h3>Frameworks &amp; Platforms</h3>
+      <div class="tags">
+        <span class="tag">.NET / ASP.NET Core</span><span class="tag">Blazor</span>
+        <span class="tag">Flask</span><span class="tag">Laravel</span><span class="tag">Bootstrap</span>
+      </div>
+    </div>
+    <div class="tag-group">
+      <h3>Data &amp; Databases</h3>
+      <div class="tags">
+        <span class="tag">SQL Server</span><span class="tag">MySQL</span><span class="tag">SQLite</span><span class="tag">Power BI</span>
+      </div>
+    </div>
+    <div class="tag-group">
+      <h3>Tools &amp; Process</h3>
+      <div class="tags">
+        <span class="tag">Git</span><span class="tag">Docker</span><span class="tag">REST APIs</span>
+        <span class="tag">Playwright</span><span class="tag">Scrum</span>
+      </div>
+    </div>
+
+    <div class="cert-line">
+      <b>Certiprof, 2024:</b>
+      <span>Business Intelligence Foundation</span>
+      <span>Cybersecurity Awareness</span>
+      <span>Lean Six Sigma White Belt</span>
+      <span>Scrum Foundation</span>
+    </div>
+  </section>
+
+  <section class="projects">
+    <h2 class="label">Projects</h2>
+    <p class="section-note">Five projects, rebuilt and audited one at a time. Four are published; the fifth is in its final QA pass.</p>
+
+    <div class="projects-list">
+
+      <article class="project">
+        <div class="project-head">
+          <h3 class="project-name"><a href="https://github.com/JpMonestelC/retail-inventory-system" target="_blank" rel="noopener">retail-inventory-system</a></h3>
+          <span class="status ok">Verified</span>
+        </div>
+        <div class="tags">
+          <span class="tag">C#</span><span class="tag">.NET 9</span><span class="tag">ASP.NET Core</span>
+          <span class="tag">Blazor WASM</span><span class="tag">SQL Server</span><span class="tag">Docker</span>
+        </div>
+        <p class="project-desc">A hardware-store class project rebuilt into a real Clean Architecture system: a repository layer that's actually wired to the API instead of sitting unused behind a direct DbContext, BCrypt + JWT replacing a login that compared plaintext passwords in the client, and the domain generalized from a single hardcoded store into a general retail system.</p>
+        <ul class="stats">
+          <li>Repository layer connected end-to-end — previously registered but never called</li>
+          <li>Centralized exception handling (.NET 8+ <code class="mono">IExceptionHandler</code>) replacing 4 duplicated try/catch blocks</li>
+          <li>Domain and Application layers recompiled independently after every change — 0 errors</li>
+        </ul>
+        <div class="project-foot">
+          <span class="repo-path mono">github.com/JpMonestelC/retail-inventory-system</span>
+          <a class="view-link" href="https://github.com/JpMonestelC/retail-inventory-system" target="_blank" rel="noopener">View on GitHub →</a>
+        </div>
+      </article>
+
+      <article class="project">
+        <div class="project-head">
+          <h3 class="project-name"><a href="https://github.com/JpMonestelC/task-manager-flask" target="_blank" rel="noopener">task-manager-flask</a></h3>
+          <span class="status ok">Verified</span>
+        </div>
+        <div class="tags">
+          <span class="tag">Python</span><span class="tag">Flask</span><span class="tag">SQLAlchemy</span>
+          <span class="tag">SQLite</span><span class="tag">Playwright</span>
+        </div>
+        <p class="project-desc">A Flask task manager hardened through two rounds of QA. An HTTP test pass caught an IDOR vulnerability that let any signed-in user edit or delete another user's tasks by guessing an ID. A second pass with real Chromium automation caught a username-validation mismatch between server and client that was silently blocking valid signups.</p>
+        <ul class="stats">
+          <li>IDOR vulnerability found and closed with a per-request ownership check</li>
+          <li>19 scripted HTTP checks plus a real Playwright/Chromium run against the live app</li>
+          <li>Duplicated validation logic and CSS consolidated into single sources of truth</li>
+        </ul>
+        <div class="project-foot">
+          <span class="repo-path mono">github.com/JpMonestelC/task-manager-flask</span>
+          <a class="view-link" href="https://github.com/JpMonestelC/task-manager-flask" target="_blank" rel="noopener">View on GitHub →</a>
+        </div>
+      </article>
+
+      <article class="project">
+        <div class="project-head">
+          <h3 class="project-name"><a href="https://github.com/JpMonestelC/dragon-inscriptor" target="_blank" rel="noopener">dragon-inscriptor</a></h3>
+          <span class="status ok">Verified</span>
+        </div>
+        <div class="tags">
+          <span class="tag">Python</span><span class="tag">PLY (Lex/Yacc)</span><span class="tag">Tkinter</span><span class="tag">AST</span>
+        </div>
+        <p class="project-desc">An interpreter for a custom drawing language: a hand-written lexer and LALR parser built with PLY, an AST-walking evaluator, and a live Tkinter canvas. Four real bugs surfaced only by running the interpreter against real programs — not by reading the grammar.</p>
+        <ul class="stats">
+          <li>Fixed a missing <code class="mono">run()</code> entry point that broke file mode completely</li>
+          <li>Console renderer optimized from 37s to 1.3s on the same program</li>
+          <li>Fixed nested-ritual errors that printed once per nesting level instead of once</li>
+        </ul>
+        <div class="project-foot">
+          <span class="repo-path mono">github.com/JpMonestelC/dragon-inscriptor</span>
+          <a class="view-link" href="https://github.com/JpMonestelC/dragon-inscriptor" target="_blank" rel="noopener">View on GitHub →</a>
+        </div>
+      </article>
+
+      <article class="project">
+        <div class="project-head">
+          <h3 class="project-name"><a href="https://github.com/JpMonestelC/world-of-invenio" target="_blank" rel="noopener">world-of-invenio</a></h3>
+          <span class="status ok">Verified</span>
+        </div>
+        <div class="tags">
+          <span class="tag">Java 17</span><span class="tag">Swing</span><span class="tag">Maven</span><span class="tag">OOP</span>
+        </div>
+        <p class="project-desc">A turn-based RPG board game with 10 character classes, reorganized from 14 loose <code class="mono">.java</code> files carrying a hidden duplicate-class build error into a proper Maven project. Two QA passes — static review, then headless GUI automation driving real button clicks — found three real bugs that weren't visible from reading the code alone.</p>
+        <ul class="stats">
+          <li>Fixed a duplicate-class build error masked by an editor setting that ran anyway</li>
+          <li>Fixed skill icons that never rendered — the method that set them was never called</li>
+          <li>Fixed one-way combo-box state: a re-picked character never returned to the other menus</li>
+        </ul>
+        <div class="project-foot">
+          <span class="repo-path mono">github.com/JpMonestelC/world-of-invenio</span>
+          <a class="view-link" href="https://github.com/JpMonestelC/world-of-invenio" target="_blank" rel="noopener">View on GitHub →</a>
+        </div>
+      </article>
+
+      <article class="project">
+        <div class="project-head">
+          <h3 class="project-name">AdoPaws (BD)</h3>
+          <span class="status prep">In preparation</span>
+        </div>
+        <div class="tags">
+          <span class="tag">SQL Server</span><span class="tag">T-SQL</span><span class="tag">ER Modeling</span>
+        </div>
+        <p class="project-desc">A database-first project for a pet-adoption system: stored procedures, an audit trigger, a reporting view, and a full ER diagram. Currently going through the same rebuild-and-verify pass as the other four before it publishes.</p>
+        <div class="project-foot">
+          <span class="soon-note">Repository link goes live once QA is complete.</span>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <footer>
+    <h2 class="label">Get in touch</h2>
+    <dl class="contact-card">
+      <dt>email</dt>
+      <dd><a href="mailto:monestelcruzjosepablo@gmail.com">monestelcruzjosepablo@gmail.com</a></dd>
+      <dt>linkedin</dt>
+      <dd><a href="https://linkedin.com/in/jose-pablo-monestel-cruz" target="_blank" rel="noopener">linkedin.com/in/jose-pablo-monestel-cruz</a></dd>
+      <dt>github</dt>
+      <dd><a href="https://github.com/JpMonestelC" target="_blank" rel="noopener">github.com/JpMonestelC</a></dd>
+      <dt>phone</dt>
+      <dd><a href="tel:+50684535325">+506 8453-5325</a></dd>
+      <dt>location</dt>
+      <dd>Tilar&aacute;n, Guanacaste, Costa Rica</dd>
+    </dl>
+    <p class="footer-note">// this page grows as new projects ship — next up: AdoPaws (BD)</p>
+  </footer>
+
+</div>
+</body>
+</html>
